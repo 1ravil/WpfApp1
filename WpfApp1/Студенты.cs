@@ -21,22 +21,6 @@ namespace WpfApp1
             this.Ведомости_успеваемости = new HashSet<Ведомости_успеваемости>();
         }
 
-        public int Код_студента { get; set; }
-        public string Фамилия { get; set; }
-        public string Имя { get; set; }
-        public string Отчество { get; set; }
-        public Nullable<int> Код__кафедры { get; set; }
-        public System.DateTime Год_рождения { get; set; }
-        public string Пол { get; set; }
-        public string Адрес { get; set; }
-        public string Город { get; set; }
-        public string Телефон { get; set; }
-        public string Фото { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ведомости_успеваемости> Ведомости_успеваемости { get; set; }
-        public virtual Кафедры Кафедры { get; set; }
-
         public double SredBal
         {
             get
@@ -59,28 +43,28 @@ namespace WpfApp1
 
             }
         }
-        public string adress
-        {
-            get
-            {
-                return "г. " + Город + " " + Адрес;
-            }
-        }
-        public string bith
-        {
-            get
-            {
-                //return Год_рождения.Day + ":" + Год_рождения.Month + ":" + Год_рождения.Year;
-                return Год_рождения.ToString("dd.MM.yyyy");
-            }
-        }
+        //public string adress
+        //{
+        //    get
+        //    {
+        //        return "г. " + Город + " " + Адрес;
+        //    }
+        //}
+        //public string bith
+        //{
+        //    get
+        //    {
+        //        //return Год_рождения.Day + ":" + Год_рождения.Month + ":" + Год_рождения.Year;
+        //        return Год_рождения.ToString("dd.MM.yyyy");
+        //    }
+        //}
         public string KafName
-            {
+        {
             get
             {
                 return Кафедры.Название_кафедры.ToString();
             }
-            }
+        }
         public double Sred
         {
             get
@@ -88,14 +72,28 @@ namespace WpfApp1
                 double summa = 0.0;
                 int count = 0;
                 var current = student_performanceEntities.GetContext().Ведомости_успеваемости.Where(p => p.Код_студента == this.Код_студента).ToList();
-                foreach(Ведомости_успеваемости v in current)
+                foreach (Ведомости_успеваемости v in current)
                 {
                     summa += v.Оценка;
                     count++;
                 }
-                return Convert.ToDouble(summa/count);
+                return Convert.ToDouble(summa / count);
             }
         }
 
+        public int Код_студента { get; set; }
+        public string Фамилия { get; set; }
+        public string Имя { get; set; }
+        public string Отчество { get; set; }
+        public int Код__кафедры { get; set; }
+        public string Телефон { get; set; }
+        public string Фото { get; set; }
+        public string Специальность { get; set; }
+        public string Группа { get; set; }
+        public int Год_начала_обучения { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ведомости_успеваемости> Ведомости_успеваемости { get; set; }
+        public virtual Кафедры Кафедры { get; set; }
     }
 }

@@ -19,6 +19,7 @@ namespace WpfApp1
             : base("name=student_performanceEntities")
         {
         }
+
         private static student_performanceEntities _context;
 
         public static student_performanceEntities GetContext()
@@ -30,7 +31,6 @@ namespace WpfApp1
 
             return _context;
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

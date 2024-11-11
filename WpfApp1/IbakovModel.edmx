@@ -81,13 +81,12 @@
           <Property Name="Фамилия" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Имя" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Отчество" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="Код  кафедры" Type="int" />
-          <Property Name="Год рождения" Type="date" Nullable="false" />
-          <Property Name="Пол" Type="nchar" MaxLength="1" Nullable="false" />
-          <Property Name="Адрес" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="Город" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Код  кафедры" Type="int" Nullable="false" />
           <Property Name="Телефон" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Фото" Type="nvarchar(max)" />
+          <Property Name="Специальность" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Группа" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Год начала обучения" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Ведомости успеваемости_Дисциплины">
           <End Role="Дисциплины" Type="Self.Дисциплины" Multiplicity="1" />
@@ -174,7 +173,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Студенты_Кафедры">
-          <End Role="Кафедры" Type="Self.Кафедры" Multiplicity="0..1" />
+          <End Role="Кафедры" Type="Self.Кафедры" Multiplicity="1" />
           <End Role="Студенты" Type="Self.Студенты" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Кафедры">
@@ -313,13 +312,12 @@
           <Property Name="Фамилия" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Имя" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Отчество" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Код__кафедры" Type="Int32" />
-          <Property Name="Год_рождения" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Пол" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Адрес" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Город" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Код__кафедры" Type="Int32" Nullable="false" />
           <Property Name="Телефон" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Фото" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Специальность" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Группа" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Год_начала_обучения" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ведомости_успеваемости" Relationship="Self.FK_Ведомости_успеваемости_Студенты" FromRole="Студенты" ToRole="Ведомости_успеваемости" />
           <NavigationProperty Name="Кафедры" Relationship="Self.FK_Студенты_Кафедры" FromRole="Студенты" ToRole="Кафедры" />
         </EntityType>
@@ -421,7 +419,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Студенты_Кафедры">
-          <End Role="Кафедры" Type="Self.Кафедры" Multiplicity="0..1" />
+          <End Role="Кафедры" Type="Self.Кафедры" Multiplicity="1" />
           <End Role="Студенты" Type="Self.Студенты" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Кафедры">
@@ -543,12 +541,11 @@
                 <ScalarProperty Name="Имя" ColumnName="Имя" />
                 <ScalarProperty Name="Отчество" ColumnName="Отчество" />
                 <ScalarProperty Name="Код__кафедры" ColumnName="Код  кафедры" />
-                <ScalarProperty Name="Год_рождения" ColumnName="Год рождения" />
-                <ScalarProperty Name="Пол" ColumnName="Пол" />
-                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
-                <ScalarProperty Name="Город" ColumnName="Город" />
                 <ScalarProperty Name="Телефон" ColumnName="Телефон" />
                 <ScalarProperty Name="Фото" ColumnName="Фото" />
+                <ScalarProperty Name="Специальность" ColumnName="Специальность" />
+                <ScalarProperty Name="Группа" ColumnName="Группа" />
+                <ScalarProperty Name="Год_начала_обучения" ColumnName="Год начала обучения" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

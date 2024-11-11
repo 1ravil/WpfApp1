@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e02efcd0ed8b4568afc0431d53323766" Name="Diagram1">
-        <EntityTypeShape EntityType="student_performanceModel.Ведомости_успеваемости" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="student_performanceModel.Дисциплины" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="student_performanceModel.Кафедры" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+      <Diagram DiagramId="6dc9d75452a74cd2bf2c1a18c9e0a2a4" Name="Diagram1">
+        <EntityTypeShape EntityType="student_performanceModel.Ведомости_успеваемости" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="student_performanceModel.Дисциплины" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="student_performanceModel.Кафедры" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="student_performanceModel.Преподаватели" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="student_performanceModel.Студенты" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="student_performanceModel.teachersmoll" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />

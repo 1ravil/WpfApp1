@@ -9,48 +9,108 @@
       Title="AddEditPage" >
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <TextBlock Text="Изображение"  Margin="5" HorizontalAlignment="Center"></TextBlock>
+            <Image Name="LogoImage" Stretch="UniformToFill" MinHeight="50" Height="auto" Width="200" HorizontalAlignment="Center" Margin="5">
+                <Image.Source>
+                    <Binding Path="Фото">
+                    </Binding>
+                </Image.Source>
+            </Image>
+            <Button Content="Изменить" Name="ChangePictureBtn" Click="ChangePictureBtn_Click" Width="200" Margin="5"></Button>
+        </StackPanel>
+
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock Text="Наименование" Width="150" Margin="5"/>
-                <TextBox Text="{Binding Имя_ученика}" Width="200" Height="30"/>
+                <TextBlock Text="Имя" Width="150" Margin="5"/>
+                <TextBox Text="{Binding Имя}"  Width="200" Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Фамилия" Width="150" Margin="5"/>
+                <TextBox Text="{Binding Фамилия}" Width="200" Height="30"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Отчество" Width="150" Margin="5"/>
+                <TextBox Text="{Binding Отчество}" Width="200" Height="30"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Код кафедры" Width="150" Margin="5"/>
-                <ComboBox Name="PartnerTypeComboBox"  Width="200" Height="30"> "/>
+                <ComboBox Name="KafedraComboBox"  Width="200" Height="30">
+                    <TextBlock>101</TextBlock>
+                    <TextBlock>102</TextBlock>
+                    <TextBlock>103</TextBlock>
+                    <TextBlock>104</TextBlock>
+                    <TextBlock>105</TextBlock>
+                    <TextBlock>106</TextBlock>
                 </ComboBox>
             </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock Text="Рейтинг" Width="150" Margin="5"/>
-                <TextBox Text="{Binding Фамилия_ученика}" Width="200" Height="30"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock Text="ИНН " Margin="5"/>
-                <TextBox Text="{Binding Отчество_ученика}" Width="200" Height="30"/>
-            </StackPanel>
+            
 
             <StackPanel Orientation="Vertical" Margin="5">
-                <TextBlock Text="Адрес:" Margin="5"/>
+
+                <!--<StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Адрес" Width="150" Margin="5"/>
+                    <TextBox Text="{Binding Адрес}" Width="200" Height="30"/>
+                </StackPanel>
+
+
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Text="Индекс" Margin="5"/>
-                    <TextBox Text="{Binding Partner_Index}" Width="150" Height="30"/>
-                    <TextBlock Text="Регион" Margin="5"/>
-                    <TextBox Text="{Binding Partner_Region}" Width="350" Height="30"/>
+                    <TextBlock Text="Пол" Width="150" Margin="5"/>
+                    <TextBox Text="{Binding Пол}" Width="200" Height="30"/>
+                </StackPanel>-->
+
+                <!--<StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Город" Width="150" Margin="5"/>
+                    <TextBox Text="{Binding Город}" Width="200" Height="30"/>
+                </StackPanel>-->
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Телефон" Width="150" Margin="5"/>
+                    <TextBox Text="{Binding Телефон}" Width="200" Height="30"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Text="Город" Margin="5"/>
-                    <TextBox Text="{Binding Partner_City}" Width="200" Height="30"/>
-                    <TextBlock Text="Улица" Margin="5"/>
-                    <TextBox Text="{Binding Partner_Street}" Width="200" Height="30"/>
-                    <TextBlock Text="Дом" Margin="5"/>
-                    <TextBox Text="{Binding Partner_House}" Width="70" Height="30"/>
+                    <TextBlock Text="Специальность" Width="150" Margin="5"/>
+                    <TextBox Text="{Binding Специальность}" Width="200" Height="30"/>
                 </StackPanel>
 
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <!--<TextBlock Text="Год начала обучения: " Width="210" Margin="5"/>-->
+                    <!--<DatePicker Name="DateStartWork" Width="200" Height="30"/>-->
+                    <TextBlock Text="Год начала обучения: " Width="210" Margin="5"/>
+                    <ComboBox Name="DateStartWorkComboBox"  Width="200" Height="30">
+                        <TextBlock>2021</TextBlock>
+                        <TextBlock>2022</TextBlock>
+                        <TextBlock>2023</TextBlock>
+                        <TextBlock>2024</TextBlock>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Группа" Width="150" Margin="5"/>
+                    <TextBox Text="{Binding Группа}" Width="200" Height="30"/>
+                </StackPanel>
+                <!--<StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Год рождения" Width="150" Margin="5"/>
+                    <DatePicker Name="BirthdayStudent" Width="200" Height="30"/>
+                </StackPanel>-->
+
+
+
+                
+                
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="5">
+            <!--<StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Фамилия" Margin="5"/>
                 <TextBox Text="{Binding Director_Surname}" Width="150" Height="30"/>
                 <TextBlock Text="Имя" Margin="5"/>
@@ -64,10 +124,11 @@
                 <TextBox Text="{Binding Partner_Phone}" Width="150" Height="30"/>
                 <TextBlock Text="Email" Margin="5"/>
                 <TextBox Text="{Binding Partner_Email}" Width="250" Height="30"/>
-            </StackPanel>
+            </StackPanel>-->
 
             <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
                 <Button Content="Сохранить" Name="SaveBtn" Click="SaveBtn_Click" Width="200" Margin="5"></Button>
+                <Button Content="Удалить" Name="DeleteBtn" Click="DeleteBtn_Click" Width="200" Margin="5"></Button>
             </StackPanel>
 
         </StackPanel>
