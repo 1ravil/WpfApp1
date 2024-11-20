@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfApp1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="StudentPage" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="StudentPage" IsVisibleChanged="Page_IsVisibleChanged" MinHeight="550" MinWidth="1050">
 
     <Grid>
         <Grid.RowDefinitions>

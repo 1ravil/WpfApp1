@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Ибаков Успеваемость студентов кафедры" Height="550" Width="1050" Icon="images/icoon.png">
+        Title="Ибаков Успеваемость студентов кафедры" MinHeight="550" MinWidth="1050" Icon="images/icoon.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"></RowDefinition>
