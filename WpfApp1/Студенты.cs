@@ -65,7 +65,7 @@ namespace WpfApp1
                 return Кафедры.Название_кафедры.ToString();
             }
         }
-        public double Sred
+        public string Sred
         {
             get
             {
@@ -77,7 +77,16 @@ namespace WpfApp1
                     summa += v.Оценка;
                     count++;
                 }
-                return Convert.ToDouble(summa / count);
+                if (count == 0)
+                {
+                    return Convert.ToString("Оценки отсутствуют");
+                }
+                else
+                {
+                    return Convert.ToString(summa / count);
+                }
+
+
             }
         }
 

@@ -51,14 +51,7 @@ namespace WpfApp1
             {
                 currentStudent = currentStudent.OrderByDescending(p => p.Фамилия).ToList();
             }
-            //if (SortCombo.SelectedIndex == 3)
-            //{
-            //    currentStudent = currentStudent.OrderBy(p => p.bith).ToList();
-            //}
-            //if (SortCombo.SelectedIndex == 4)
-            //{
-            //    currentStudent = currentStudent.OrderByDescending(p => p.bith).ToList();
-            //}
+            
             if(ComboFilter.SelectedIndex!=0 && ComboFilter.SelectedIndex!=-1)
             {
                 var Currentcombo = currentKafedra.Where(p => p.Название_кафедры == ComboFilter.SelectedItem.ToString()).Select(p=> p.Код_Кафедры).ToList();
